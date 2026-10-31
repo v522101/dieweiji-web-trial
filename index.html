@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#344d42" />
+    <title>叠野纪 · 山野与远方</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Crect rx='9' width='50' height='50' fill='%23344d42'/%3E%3Cpath d='M25 7L41 37H9Z' fill='%23e6cc96'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main id="app">
+      <header>
+        <div class="brand">
+          <span class="brandmark">叠</span>
+          <div>
+            <h1>叠野纪</h1>
+            <button id="journey" class="chapter-link" aria-label="章节旅程">
+              第一章 · 风暴后的来信 ›
+            </button>
+          </div>
+        </div>
+        <div class="head-actions">
+          <button id="production" title="生产调度" aria-label="生产调度">
+            ⚒
+          </button>
+          <button id="sound" title="声音设置" aria-label="声音设置">♫</button
+          ><button id="menu" title="聚落手册" aria-label="聚落手册">☰</button>
+        </div>
+      </header>
+      <section class="hud">
+        <div>
+          <span id="sun">☀</span><b id="day">第 1 天</b
+          ><small id="clock">距夜晚 90秒</small
+          ><i class="daytrack"><i id="dayfill"></i></i>
+        </div>
+        <button id="food" aria-label="食物详情">
+          <span>粮食</span><b id="foodnum">3 / 2</b
+          ><small>现有 / 今晚需要</small></button
+        ><button id="coin" aria-label="补给商店">
+          <span>古币</span><b id="coins">0</b
+          ><small id="population">居民 1 / 床位 1</small></button
+        ><button id="pause" aria-label="暂停或继续">▶</button>
+      </section>
+      <button id="objective" class="objective">
+        <span class="questmark">◇</span>
+        <div><small>聚落目标</small><b id="goal">采集第一份野果</b></div>
+        <span>›</span>
+      </button>
+      <button
+        id="environment"
+        class="environment"
+        hidden
+        aria-label="章节环境详情"
+      ></button>
+      <section id="board" aria-label="卡牌桌面">
+        <div id="world"></div>
+        <div id="tapmove" hidden>
+          <span id="tapmove-label"></span><button id="tapmove-target">找目标</button><button id="tapmove-cancel">取消</button>
+        </div>
+        <div id="onboarding">
+          拖动 <strong>居民</strong> 到 <strong>灌木</strong> 上<span
+            >叠在一起，就会开始工作</span
+          >
+        </div>
+        <div class="maptools">
+          <button id="zoomout" aria-label="缩小桌面">−</button
+          ><button id="home" aria-label="回到聚落中心">⌖</button
+          ><button id="zoomin" aria-label="放大桌面">＋</button>
+        </div>
+        <div id="dragtip"></div>
+        <div id="sellzone">出售这张卡 · <b id="sellprice">1</b> 古币</div>
+        <div id="pausedbadge">时间已暂停 · 可以自由整理</div>
+        <div id="toast" role="status"></div>
+      </section>
+      <div class="bottomnote">
+        <span id="status">拖动空白处移动桌面 · 双指缩放</span
+        ><button id="speed">1×</button>
+      </div>
+      <nav>
+        <button id="packs"><span>▱</span>补给包</button
+        ><button id="recipes"><span>▤</span>配方册</button
+        ><button id="tidy"><span>▦</span>整理桌面</button>
+      </nav>
+    </main>
+    <div id="veil" hidden>
+      <section
+        id="dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-label="聚落面板"
+      ></section>
+    </div>
+    <div id="ghost"></div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
